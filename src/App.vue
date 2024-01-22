@@ -1,15 +1,26 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+  <div>
+    <AppProducts
+      v-for="product in $store.state.products" :key="product.id" :product="product"
+    />
+  </div>
+  <div>
+    <pre>
+      {{ $store.state.cart }}
+    </pre>
+  </div>
   <HelloWorld msg="Welcome to Your Vue.js App"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue';
+import AppProducts from './components/products/AppProducts.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    AppProducts
   },
   data() {
     return {
