@@ -1,5 +1,6 @@
 <template>
     <div>
+        <p>Valor total: {{ $store.getters.total }}</p>
         {{ product.name }} - {{ product.price }} <br>
         <button v-if="!onCart()" @click="addCart()">Adicionar no carrinho</button>
         <button v-else @click="removeCart()">Remover do carrinho</button>
