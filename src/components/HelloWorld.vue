@@ -21,7 +21,7 @@ export default {
       email: "rayana@teste.com",
       pass: "rayane123"
     };
-      this.$store.commit('user', newUser);
+      this.$store.dispatch('user', newUser).then(() => console.log("Atualizou!"));
     }
   }
 }
